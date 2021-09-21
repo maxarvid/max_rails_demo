@@ -1,4 +1,6 @@
 RSpec.describe 'GET /api/articles', type: :request do
+  subject { response }
+
   before do
     get '/api/articles'
   end
