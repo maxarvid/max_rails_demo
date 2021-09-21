@@ -27,9 +27,7 @@ blocks:
             - 'bundle exec rails db:create db:migrate'
             - bundle exec rspec
       epilogue:
-        on_pass:
+        always:
           commands:
-            - ./cc-test-reporter after-build --exit-code
-        on_fail:
-          commands:
-            - echo 0
+            - '''exitcode=$(if [ "$SEMAPHORE_JOB_RESULT" == "passed" ]; then echo 0; else echo 1; fi)'''
+            - ./cc-test-reporter after-build --exit-code $exitcode
