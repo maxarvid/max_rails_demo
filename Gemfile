@@ -8,6 +8,7 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rack-cors', require: 'rack/cors'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
+gem 'devise_token_auth'
 
 group :development, :test do
   gem 'rspec-rails'
