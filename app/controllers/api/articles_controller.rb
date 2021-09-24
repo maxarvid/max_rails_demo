@@ -14,15 +14,15 @@ class Api::ArticlesController < ApplicationController
     article = Article.create(title: params[:article][:title], 
                             author: params[:article][:author],
                             lede: params[:article][:lede])
+                            
     render json: { message: 'Your article was created' }, status: 201
-    
   end
 
   private
 
   # def authenticate_user!
-  #   #temp solution
-  #   render json: { message: 'You have to login or sign-up first'}, status: 401
+  #   binding.pry
+  #   super
   # end
   
 
